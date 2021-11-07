@@ -1,11 +1,11 @@
-% FileData = load('myvars.mat');
-% 
-% fn = fieldnames(FileData);
-% for k=1:numel(fn)
-%     if( isnumeric(FileData.(fn{k})) )
-%         csvwrite("csvs/"+string(fn{k})+'.csv', FileData.(fn{k}));
-%     end
-% end
+FileData = load('myvars.mat');
+
+fn = fieldnames(FileData);
+for k=1:numel(fn)
+    if( isnumeric(FileData.(fn{k})) )
+        csvwrite("csvs/"+string(fn{k})+'.csv', FileData.(fn{k}));
+    end
+end
 
 json_data = jsonencode(output1);
 writematrix(json_data, "outputs/output1.csv");
